@@ -1,7 +1,4 @@
-import 'dart:math';
-
 class ArmstrongNumbers {
-  // [NOTE] can't handle big values.
 
   bool isArmstrongNumber(String input){
     BigInt number = BigInt.parse(input);
@@ -9,10 +6,9 @@ class ArmstrongNumbers {
     BigInt result = BigInt.zero;
 
     input.split('').forEach((element) {
-      result += BigInt.from(pow(int.parse(element), digits));
+      result += BigInt.parse(element).pow(digits);
     });
     
-    print(result);
     return result == number;
   }
 }
